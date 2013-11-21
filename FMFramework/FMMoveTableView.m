@@ -318,6 +318,7 @@
 			FMSnapShotImageView *snapShotOfMovingCell = [[FMSnapShotImageView alloc] initWithImage:image];
 			CGRect snapShotFrame = [self rectForRowAtIndexPath:touchedIndexPath];
 			snapShotFrame.size = cellFrame.size;
+			snapShotFrame.origin.y -= snapShotFrame.size.height / 2.0;
 			[snapShotOfMovingCell setFrame:snapShotFrame];
 			[snapShotOfMovingCell setAlpha:0.95];
 			
