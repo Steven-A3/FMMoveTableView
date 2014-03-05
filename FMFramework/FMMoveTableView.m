@@ -327,8 +327,10 @@
 			
 			
 			// Prepare the cell for moving (e.g. clear it's labels and imageView)
-			[touchedCell prepareForMove];
-			
+			if ([touchedCell respondsToSelector:@selector(prepareForMove)]) {
+				[touchedCell prepareForMove];
+			}
+
 			// Inform the delegate about the beginning of the move
 			if ([[self delegate] respondsToSelector:@selector(moveTableView:willMoveRowAtIndexPath:)]) {
 				[[self delegate] moveTableView:self willMoveRowAtIndexPath:touchedIndexPath];
